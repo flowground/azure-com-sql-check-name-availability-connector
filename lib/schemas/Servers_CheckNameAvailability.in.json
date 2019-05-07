@@ -1,0 +1,38 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "A request to check whether the specified name for a resource is available.",
+            "properties": {
+                "name": {
+                    "description": "The name whose availability is to be checked.",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "The type of resource that is used as the scope of the availability check.",
+                    "enum": [
+                        "Microsoft.Sql/servers"
+                    ],
+                    "type": "string",
+                    "x-ms-enum": {
+                        "modelAsString": false,
+                        "name": "CheckNameAvailabilityResourceType"
+                    }
+                }
+            },
+            "required": [
+                "name",
+                "type"
+            ],
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
